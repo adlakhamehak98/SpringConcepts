@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="SpringCore.Question5.Complex" id="complexBean">
+        <property name="list">
+            <list>
+                <value>item1</value>
+                <value>item2</value>
+                <value>item3</value>
+            </list>
+        </property>
+        <property name="set">
+            <set>
+                <value>set a</value>
+                <value>set b</value>
+                <value>set c</value>
+            </set>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="key 1" value="value a"/>
+                <entry key="key 2" value="value b"/>
+                <entry key="key 3" value="value c"/>
+            </map>
+        </property>
+    </bean>
+</beans>

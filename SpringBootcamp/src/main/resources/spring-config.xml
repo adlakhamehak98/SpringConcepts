@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--question 1-->
+    <bean id="database" class="SpringCore.Question1and2.Database">
+        <!--Question 2: Get the bean of the class from spring container and print the values of the instance variable.-->
+        <property name="name" value="localhost"/>
+        <property name="port" value="3306"/>
+    </bean>
+
+    <!--Question 3-->
+    <bean id="tea" class="SpringCore.Question3to10except5.Tea">
+        <property name="tea" value="Green Tea"></property>
+    </bean>
+    <bean id="expressTea" class="SpringCore.Question3to10except5.ExpressTea">
+        <property name="expressTea" value="Chaipoint Express Tea"></property>
+    </bean>
+
+    <!--question 7: Setting scope prototype-->
+    <bean class="SpringCore.Question3to10except5.Restaurant" id="teaRestaurant" scope="prototype">
+        <!--question 3 last part-->
+        <property name="hotDrink" ref="tea"/>
+    </bean>
+
+    <!--question 4: Using Inner Bean-->
+    <bean class="SpringCore.Question3to10except5.Restaurant" id="expressTeaRestaurant">
+        <constructor-arg name="hotDrink1">
+            <bean class="SpringCore.Question3to10except5.ExpressTea">
+                <property name="expressTea" value="Chaipoint Express Tea"/>
+            </bean>
+        </constructor-arg>
+    </bean>
+
+    <!--question 6: Autowire by constructor-->
+    <bean class="SpringCore.Question3to10except5.Restaurant" id="teaRestaurantByConstructor" autowire="constructor">
+        <property name="hotDrink" ref="tea"/>
+    </bean>
+    <!--question 6: Autowire by Name-->
+    <bean class="SpringCore.Question3to10except5.Restaurant" id="expressTeaRestaurantByName" autowire="byName">
+        <property name="hotDrink" ref="expressTea"/>
+    </bean>
+
+</beans>

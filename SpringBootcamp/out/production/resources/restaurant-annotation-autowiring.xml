@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--question 9-->
+    <bean class="SpringCore.Question3to10except5.Tea" name="hotDrink">
+        <property name="tea" value="Tea by Field"/>
+    </bean>
+    <!--@Autowired by Field Name-->
+    <bean class="SpringCore.Question3to10except5.Restaurant" id="teaRestaurantByFieldAnnotation">
+        <property name="hotDrink" ref="hotDrink"/>
+    </bean>
+
+    <bean class="SpringCore.Question3to10except5.Tea" name="hotDrink2">
+        <property name="tea" value="Tea by Setter"/>
+    </bean>
+    <!--HotDrink setter method in Restaurant class is Required-->
+    <!--@Autowired On Setter-->
+    <bean class="SpringCore.Question3to10except5.Restaurant" id="teaRestaurantBySetterAnnotation">
+        <property name="hotDrink" ref="hotDrink2"/>
+    </bean>
+
+    <bean class="SpringCore.Question3to10except5.Tea" name="hotDrink1">
+        <property name="tea" value="Tea by Constructor"/>
+    </bean>
+    <!--@Autowired by Constructor Argument Name-->
+    <bean class="SpringCore.Question3to10except5.Restaurant" id="teaRestaurantByAnnotation">
+        <property name="hotDrink" ref="hotDrink1"/>
+    </bean>
+
+    <!--For using annotation's like @Component and using them as beans-->
+    <context:component-scan base-package="SpringCore.Question3to10except5"/>
+    <!--Registering annotations-->
+    <context:annotation-config/>
+
+
+</beans>
