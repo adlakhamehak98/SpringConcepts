@@ -2,11 +2,13 @@ package entity;
 
 import javax.persistence.Embeddable;
 
+//Question 10: Create a class Address for Author with instance variables streetNumber, location, State.
+
 @Embeddable
 public class Address {
-    String streetNumber;
-    String location;
-    String State;
+    private String streetNumber;
+    private String location;
+    private String State;
 
     public String getStreetNumber() {
         return streetNumber;

@@ -1,6 +1,7 @@
 package service;
 
 import entity.Author;
+import entity.Book;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -87,11 +88,11 @@ public class AuthorService {
         List books = session.createQuery("from Book").list();
 
         for (int i = 1; i <= 4; i++) {
-            //  //    Exercise 15
+            //  //    Question 15: Implement One to One mapping between Author and Book.
 //            Author author = new Author("Author" + i, "Lname" + i, 20 + i, new Date()
 //                    , session.get(Book.class, i));
 
-            //    Exercise 17
+            //    Question 17
             Author author = new Author("Author" + i, "Lname" + i, 20 + i, new Date()
                     , books);
             session.beginTransaction();
@@ -100,7 +101,7 @@ public class AuthorService {
         }
 
 
-//      Exercise 16.1,16.2
+//    // Question 16.1,16.2
 //        Author author = new Author("Author" + 1, "Lname" + 1, 21, new Date()
 //                , books.subList(0, 2));
 //        Author author1 = new Author("Author" + 2, "Lname" + 2, 22, new Date()
@@ -117,6 +118,5 @@ public class AuthorService {
 //        }
 //        books.forEach(book -> session.save(book));
 //        session.getTransaction().commit();
-
     }
 }

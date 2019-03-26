@@ -4,6 +4,8 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+//Question 14: Create an Entity book with an instance variable bookName.
+
 @Entity
 public class Book {
     @Id
@@ -12,7 +14,7 @@ public class Book {
 
     private String bookName;
 
-//    //  Exercise16.2
+//    //  Question 16.2
 //    @ManyToOne
 //    private Author author;
 //
@@ -80,5 +82,4 @@ public class Book {
 
     public Book() {
     }
-
 }

@@ -8,17 +8,18 @@ import java.util.*;
 @Entity
 public class Author {
 
-    //  Exercise9
+    //  Question 9: Generate Id for Author Using IDENTITY and TABLE strategy.
     //  @GeneratedValue(strategy = GenerationType.TABLE)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
+    //Question 6: Rename all the fields using column annotation.
     @Column(name = "id")
     private int id;
 
     @Column(name = "first_name")
     private String firstName;
 
-    //  Exercise7
+    //  Question 7: Mark lastName as @Transient.
     @Transient
     @Column(name = "last_name")
     private String lastName;
@@ -26,20 +27,20 @@ public class Author {
     @Column(name = "age")
     private int age;
 
-    //  Exercise8
+    //  Question 8: Use @Temporal for date of birth of Author.
     @Temporal(TemporalType.DATE)
     @Column(name = "date_of_birth")
     private Date dateOfBirth;
 
-    //  Exercise11
+    //  Question 11: Create instance variable of Address class inside Author class and save it as embedded object.
     @Embedded
     private Address address;
 
-    //   Exercise12
+    //   Question 12: Introduce a List of subjects for author.
     @ElementCollection
     private Set<String> subjects = new HashSet<>();
 
-//    Exercise14
+//    Question 14: Create an Entity book with an instance variable bookName.
 //    public Author(String firstName, String lastName, int age, Date dateOfBirth, Book book) {
 //        this.firstName = firstName;
 //        this.lastName = lastName;
@@ -56,19 +57,19 @@ public class Author {
 //        this.book = book;
 //    }
 
-//    Exercise15
+//    Question 15: Implement One to One mapping between Author and Book.
 //    @OneToOne
 //    @JoinColumn(name = "book_id")
 //    private Book book;
 
-    //    Exercise16.1
+//    //    Question 16: Implement One to Many Mapping between Author and Book(Unidirectional, BiDirectional and without additional table ) and implement cascade save.
 //    @JoinTable
 //    @OneToMany(cascade = CascadeType.PERSIST)
 
-//    //  Exercise16.3
+//    //  Question 16.3
 //    @OneToMany(mappedBy = "authors")
 
-    //    Exercise17
+    //    Question 17: Implement Many to Many Mapping between Author and Book.
     @ManyToMany
     private Collection<Book> books;
 
