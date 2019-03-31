@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Thymeleaf</title>
+    <script th:src="@{'/demo.js'}"></script>
+    <link th:href="@{'/demo.css'}" rel="stylesheet"/>
+</head>
+<body>
+<!--Question 6: Create and split common header and footer in the above-created listing page.-->
+<div th:replace="fragment::headerFragment"></div>
+<p>Hello Thymeleaf!</p>
+<br/>
+<button id="button" onclick="hello()">Click me!</button>
+<div th:replace="fragment::footerFragment"></div>
+</body>
+</html>

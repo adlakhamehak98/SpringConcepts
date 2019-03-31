@@ -1,0 +1,6 @@
+
+/*Question 2: Create an external CSS file and use it to modify hello world page background color to grey.*/
+
+body {
+    background-color: grey;
+}

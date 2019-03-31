@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 9</title>
+</head>
+<body>
+<header th:replace="fragment :: headerFragment"></header>
+<table border="1">
+    <tr th:each="userType:${T(com.thymeleaf.thymeleafDemo.entity.UserType).values()">
+        <td th:text="${userType.getMessage()}">
+        </td>
+    </tr>
+</table>
+<footer th:replace="fragment :: footerFragment"></footer>
+</body>
+</html>

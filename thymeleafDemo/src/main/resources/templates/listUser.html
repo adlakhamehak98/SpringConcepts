@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .odd{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+
+<table border="1 solid black">
+    <tr>
+        <th>serial</th>
+        <th>Name</th>
+        <th>ID</th>
+        <th>Contact Number</th>
+    </tr>
+    <!--Question 8: Create a user listing table show alternate row color using a conditional tag.-->
+    <th:block th:each="user,i:${users}">
+        <tr th:class="${i.even}?'odd':''">
+            <td th:text="${i.index}"></td>
+            <td th:text="${user.name}"></td>
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.contactNumber}"></td>
+        </tr>
+    </th:block>
+</table>
+</body>
+</html>
