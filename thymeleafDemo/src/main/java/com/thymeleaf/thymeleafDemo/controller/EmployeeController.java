@@ -5,10 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
@@ -52,6 +49,13 @@ public class EmployeeController {
     }
 */
 
+    @PostMapping("/register")
+    @ResponseBody
+    public String registerEmployee(Employee employee) {
+        System.out.println(employee);
+        return employee.toString();
+    }
+
     //Question 8: Create a user listing table show alternate row color using a conditional tag.
     @GetMapping("/employeeList")
     public ModelAndView getEmp(Model model) {
@@ -65,16 +69,17 @@ public class EmployeeController {
         return view;
     }
 
+    //Question 9: Create an ENUM with values USER, ADMIN, SUPER_ADMIN and iterate it to show a custom message to users basis on the ENUM value.
     @GetMapping("/getUserType")
     public String getEnum() {
         return "enum";
     }
 
-//    @GetMapping("/exercise10")
-//    public String getLoaderForm(Model model) {
-//        model.addAttribute("employee", new Employee());
-//        return "Exercise10";
-//    }
-
+    //Question 10: Add loader in registration form submission which renders load till server return success form submission response.
+    @GetMapping("/loader")
+    public String getLoaderForm(Model model) {
+        model.addAttribute("employee", new Employee());
+        return "loader";
+    }
 }
 

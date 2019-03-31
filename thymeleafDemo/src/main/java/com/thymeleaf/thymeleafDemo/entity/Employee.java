@@ -7,6 +7,10 @@ public class Employee {
     private long id;
     private String contactNumber;
 
+    public Employee() {
+
+    }
+
     public String getName() {
         return name;
     }
