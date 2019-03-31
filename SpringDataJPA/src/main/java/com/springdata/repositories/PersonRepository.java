@@ -78,5 +78,4 @@ public interface PersonRepository extends CrudRepository<Person, Integer> {
 
     //Question 13: Apply Pagination on Person entities.
     Page<Person> findAll(Pageable pageable);
-
 }
